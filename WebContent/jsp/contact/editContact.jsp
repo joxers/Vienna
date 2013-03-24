@@ -1,5 +1,7 @@
 <%@include file="taglib_includes.jsp" %>
 
+<%@include file="../header.jsp" %>
+
 <html>
 <head>
 	<script type="text/javascript" src="js/contacts.js"></script>
@@ -7,10 +9,7 @@
 </head>
 <body style="font-family: Arial; font-size:smaller;">
 
-<table  bgcolor="lightblue" width="750" height="500" align="center" style="border-collapse: collapse;" border="1" bordercolor="#006699" >
-	<tr>
-		<td align="center"><h3>Edit Contact Form -folder</h3></td>
-	</tr>
+
   <tr valign="top" align="center">
     <td align="center">
  		<form:form action="updateContact.do" method="post" commandName="contact/editContact">

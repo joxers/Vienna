@@ -24,7 +24,8 @@ public class Contact
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column	private String name;
-	@Column private String address; 
+	@Column private String address;
+	@Column private String address2;
 	@Column private String gender; 
 	@Column private Date dob; 
 	@Column private String email;
@@ -35,13 +36,14 @@ public class Contact
 	{
 	}
 	
-	public Contact(int id, String name, String address, String gender,
+	public Contact(int id, String name, String address, String address2,String gender,
 			Date dob, String email, String mobile, String phone)
 	{
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
+		this.address = address2;
 		this.gender = gender;
 		this.dob = dob;
 		this.email = email;
@@ -77,6 +79,15 @@ public class Contact
 	{
 		this.address = address;
 	}
+	
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
 	public String getGender()
 	{
 		return gender;

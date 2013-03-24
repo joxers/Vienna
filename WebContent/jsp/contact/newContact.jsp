@@ -7,9 +7,9 @@
 </head>
 <body style="font-family: Arial; font-size:smaller;">
 
-<table  bgcolor="lightblue" width="750" height="500" align="center" style="border-collapse: collapse;" border="1" bordercolor="#006699" >
+<table  bgcolor="lightblue" width="750" height="350" align="center" style="border-collapse: collapse;" border="1" bordercolor="#006699" >
 	<tr>
-		<td align="center"><h3>Edit Contact Form</h3></td>
+		<td align="center"><h3>Tambah Anggota</h3></td>
 	</tr>
 	<tr valign="top" align="center">
     <td align="center">
@@ -43,7 +43,13 @@
 					</tr>
 					<tr>
 						<td width="100" align="right"><spring:message code="App.Address"/></td>
-						<td><form:input path="address"/></td>
+						<td><form:textarea path="address"/></td>
+						<td align="left">
+						<form:errors path="address" cssStyle="color:red"></form:errors>  </td>
+					</tr>
+					<tr>
+						<td width="100" align="right"><spring:message code="App.Address"/> ke 2</td>
+						<td><form:textarea path="address2"/></td>
 						<td align="left">
 						<form:errors path="address" cssStyle="color:red"></form:errors>  </td>
 					</tr>

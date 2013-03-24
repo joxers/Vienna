@@ -1,4 +1,5 @@
 <%@include file="taglib_includes.jsp" %>
+<%@include file="../header.jsp" %>
 
 <html>
 <head>
@@ -8,9 +9,8 @@
 </head>
 <body style="font-family: Arial; font-size:smaller;">
 	<center>
-	show di folder
-	<form action="searchContacts.do" method="post">		
-			<table style="border-collapse: collapse;" border="0" bordercolor="#006699" width="500">
+		<form action="searchContacts.do" method="post">		
+			<table style="border-collapse: collapse;" border="0" bordercolor="#006699" width="800">
 			<tr>
 				<td><spring:message code="search.person"/></td> 
 				<td><input type="text" name="name"/>
@@ -20,11 +20,13 @@
 		</table>
 	</form>
 	
-	<table style="border-collapse: collapse;" border="1" bordercolor="#006699" width="500">
+	<table style="border-collapse: collapse;" border="1" bordercolor="#006699" width="800">
 		<tr bgcolor="lightblue">
 			<th>ID</th>
 			<th><spring:message code="App.Name"/></th>			
-			<th><spring:message code="App.Address"/></th>	
+			<th><spring:message code="App.Address"/></th>
+			<th><spring:message code="App.Address"/>"2"</th>
+				
 			<th><spring:message code="App.Mobile"/></th>
 			<th><spring:message code="App.Action"/></th>
 		</tr>
@@ -37,8 +39,9 @@
 			<c:forEach var="contact" items="${SEARCH_CONTACTS_RESULTS_KEY}">		
 		    <tr>
 				<td><c:out value="${contact.id}"></c:out></td>
-				<td><c:out value="${contact.name}"></c:out></td>
+				<td><a href="updateContact.do?id=${contact.id}"><c:out value="${contact.name}"></c:out></a></td>
 				<td><c:out value="${contact.address}"></c:out> </td>
+				<td><c:out value="${contact.address2}"></c:out> </td>
 				<td><c:out value="${contact.mobile}"></c:out></td>
 				<td>
 					&nbsp;<a href="updateContact.do?id=${contact.id}"><spring:message code="Btn.Edit"/></a>
